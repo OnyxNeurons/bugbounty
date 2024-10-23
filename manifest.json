@@ -1,0 +1,91 @@
+{
+  "name": "Bug Bounty Stats",
+  "slug": "bugbounty",
+  "version": "1.0.0",
+  "description": "Bug bounty stats neuron",
+  "pages": [
+    {
+      "name": "home",
+      "path": "/"
+    },
+    {
+      "name": "platform",
+      "path": "/platform"
+    },
+    {
+      "name": "platform/new",
+      "path": "/platform/new"
+    },
+    {
+      "name": "platform/edit",
+      "path": "/platform/edit"
+    },
+    {
+      "name": "program",
+      "path": "/program"
+    },
+    {
+      "name": "program/view",
+      "path": "/program/view"
+    },
+    {
+      "name": "report",
+      "path": "/report"
+    }
+  ],
+  "api": [
+    {
+      "name": "platform/try",
+      "method": "POST",
+      "path": "/platform/try"
+    },
+    {
+      "name": "program/reload",
+      "method": "GET",
+      "path": "/program/reload"
+    },
+    {
+      "name": "report/reload",
+      "method": "GET",
+      "path": "/report/reload"
+    }
+  ],
+  "nav": [
+    {
+      "title": "Dashboard",
+      "url": "/",
+      "icon": "home",
+      "items": []
+    },
+    {
+      "title": "Platforms",
+      "url": "/platform",
+      "icon": "list",
+      "items": []
+    },
+    {
+      "title": "Programs",
+      "url": "/program",
+      "icon": "files",
+      "items": []
+    },
+    {
+      "title": "Reports",
+      "url": "/report",
+      "icon": "penline",
+      "items": []
+    },
+    {
+      "title": "Stats",
+      "url": "/stats",
+      "icon": "charts",
+      "items": []
+    },
+    {
+      "title": "Settings",
+      "url": "/settings",
+      "icon": "settings",
+      "items": []
+    }
+  ]
+}
