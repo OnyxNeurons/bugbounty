@@ -1,0 +1,13 @@
+services:
+  bugbounty:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: onyx-neuron-bugbounty
+    networks:
+      - onyx-network
+
+networks:
+  onyx-network:
+    external: true
+    name: onyx-network

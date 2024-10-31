@@ -1,0 +1,31 @@
+services:
+  bugbounty-backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: development
+    container_name: onyx-neuron-bugbounty
+    volumes:
+      - ./backend/src:/backend/src
+      - ./backend/prisma:/backend/prisma
+      - ./frontend/dist:/frontend
+      - ./manifest.json:/manifest.json
+    networks:
+      - onyx-network
+  bugbounty-frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      target: development
+    container_name: onyx-neuron-bugbounty-frontend
+    volumes:
+      - ./frontend/src:/frontend/src
+      - ./frontend/dist:/frontend/dist
+    networks:
+      - onyx-network
+
+networks:
+  onyx-network:
+    external: true
+    name: onyx-network
+    driver: bridge

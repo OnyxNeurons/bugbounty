@@ -1,0 +1,83 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./db.sqlite"
+}
+
+model Platform {
+  id             String    @id @default(cuid())
+  userId         String
+  name           String
+  slug           String    @unique
+  email          String?
+  password       String?
+  hunterUsername String?
+  otp            String?
+  jwt            String?
+  type           String
+  programs       Program[]
+  reports        Report[]
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @default(now()) @updatedAt
+
+}
+
+model Program {
+  id         String   @id @default(cuid())
+  platformId String
+  platform   Platform @relation(fields: [platformId], references: [id], onDelete: Cascade)
+  userId     String
+  report     Report[]
+  name       String
+  slug       String   @unique
+  vdp        Boolean
+  favourite  Boolean  @default(false)
+  tag        String?
+  url        String
+  type       String
+  bountyMin  Int?
+  bountyMax  Int?
+  scope      Scope[]
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @default(now()) @updatedAt
+
+}
+
+model Scope {
+  id        String   @id @default(cuid())
+  programId String
+  program   Program  @relation(fields: [programId], references: [id], onDelete: Cascade)
+  scope     String
+  scopeType String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+
+}
+
+model Report {
+  id          String   @id @default(cuid())
+  platformId  String
+  platform    Platform @relation(fields: [platformId], references: [id], onDelete: Cascade)
+  programId   String
+  program     Program  @relation(fields: [programId], references: [id], onDelete: Cascade)
+  userId      String
+  title       String
+  reportId    String
+  bounty      Float?
+  currency    String?
+  collab      Boolean
+  status      String
+  cvssVector  String?
+  cvss        Float?
+  createdDate DateTime
+  updatedDate DateTime
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now()) @updatedAt
+
+}

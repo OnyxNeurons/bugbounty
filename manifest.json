@@ -33,57 +33,40 @@
       "path": "/report"
     }
   ],
-  "api": [
-    {
-      "name": "platform/try",
-      "method": "POST",
-      "path": "/platform/try"
-    },
-    {
-      "name": "program/reload",
-      "method": "GET",
-      "path": "/program/reload"
-    },
-    {
-      "name": "report/reload",
-      "method": "GET",
-      "path": "/report/reload"
-    }
-  ],
   "nav": [
     {
       "title": "Dashboard",
-      "url": "/",
+      "url": "/dashboard/neuron/bugbounty",
       "icon": "home",
       "items": []
     },
     {
       "title": "Platforms",
-      "url": "/platform",
+      "url": "/dashboard/neuron/bugbounty/platform",
       "icon": "list",
       "items": []
     },
     {
       "title": "Programs",
-      "url": "/program",
+      "url": "/dashboard/neuron/bugbounty/program",
       "icon": "files",
       "items": []
     },
     {
       "title": "Reports",
-      "url": "/report",
+      "url": "/dashboard/neuron/bugbounty/report",
       "icon": "penline",
       "items": []
     },
     {
       "title": "Stats",
-      "url": "/stats",
+      "url": "/dashboard/neuron/bugbounty/stats",
       "icon": "charts",
       "items": []
     },
     {
       "title": "Settings",
-      "url": "/settings",
+      "url": "/dashboard/neuron/bugbounty/settings",
       "icon": "settings",
       "items": []
     }
